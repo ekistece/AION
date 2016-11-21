@@ -1,0 +1,60 @@
+#NoEnv
+#IfWinActive, AION Client
+SendMode Input
+
+;Duración de la pulsación.
+press := 20
+
+$F12::
+count := 0
+while GetKeyState("F12", "P")
+{
+	count := ++count
+	sleep, 1
+}
+if (count >= press)
+{
+	goto, Macro2
+}
+else
+{
+	goto, Macro1
+}
+return
+
+Macro1:
+
+SendCommand("/Right Holy Dagger of the Archon Elite Unit")
+SendCommand("/Use Archon Special Ops Commander's Holy Leather Hat")
+SendCommand("/Use Holy Leather Doublet of the Archon Elite Unit")
+SendCommand("/Use Holy Leather Breeches of the Archon Elite Unit")
+SendCommand("/Use Holy Leather Spaulders of the Archon Elite Unit")
+SendCommand("/Use Holy Leather Gauntlets of the Archon Elite Unit")
+SendCommand("/Use Holy Leather Shoes of the Archon Elite Unit")
+SendCommand("/Use Archon Special Ops Commander's Holy Corundum Necklace")
+SendCommand("/Use Archon Special Ops Commander's Holy Leather Belt")
+SendCommand("/Use Archon Special Ops Commander's Holy Daeva Wings")
+Send,{F12}
+return
+ 
+Macro2:
+
+SendCommand("/Right  Angry Hyperion's Dagger")
+SendCommand("/Use Leather Hat of the Mighty Full Moon")
+SendCommand("/Use Angry Hyperion's Jerkin (Assassin)")
+SendCommand("/Use Angry Hyperion's Breeches (Assassin)")
+SendCommand("/Use Angry Hyperion's Boots (Assassin)")
+SendCommand("/Use Angry Hyperion's Shoulderguards (Assassin)")
+SendCommand("/Use Angry Hyperion's Vambraces (Assassin)")
+SendCommand("/Use Angry Hyperion's Opal Necklace")
+SendCommand("/Use Mighty Balaur's Wings")
+SendCommand("/Use Archon Commander's War Belt") 
+Send,{F11}
+return
+
+SendCommand(command)
+{
+	send {Enter}
+	send %command%
+	send {Enter}
+}
